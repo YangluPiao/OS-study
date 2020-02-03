@@ -17,11 +17,13 @@ prepare: check
 
 ${ID}.o: ${ID}.cpp
 	@echo "building..."
-	@g++ $^ -o $@
+	@g++ $^ -o $@ -O0 -g
 
 run: ${ID}.o 
 	@echo "running..."
 	@./$^
 
+debug: check ${ID}.o
+	@gdb --args ./${ID}.o
 clean:
 	@rm -rf *.o
