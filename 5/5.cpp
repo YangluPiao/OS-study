@@ -144,7 +144,6 @@ void p8() {
     cout << getpid() << " writes: " << tmp << endl;
     write(pipe_fd[1], tmp.c_str(), 5);
     close(pipe_fd[1]); // finish writing, reader will see EOF
-    waitpid(children[1], NULL, 0); // wait for reader, the second child
   } else {
     children[1] = fork(); // forks the second child
     if (children[1] < 0) {
