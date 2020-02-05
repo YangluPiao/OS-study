@@ -1,5 +1,7 @@
 SHELL := /bin/bash
 
+override CPP_FLAG := -O0 -g ${CPP_FLAG}
+
 all: check run
 
 check:
@@ -17,7 +19,7 @@ prepare: check
 
 ${ID}.o: ${ID}.cpp
 	@echo "building..."
-	@g++ $^ -o $@ -O0 -g
+	@g++ $^ -o $@ ${CPP_FLAG}
 
 run: ${ID}.o 
 	@echo "running..."
