@@ -1,2 +1,2 @@
-# OS-study
-ft. Operating Systems: Three Easy Pieces
+# OS-study:
+Studying [Operating Systems: Three Easy Pieces](http://pages.cs.wisc.edu/~remzi/OSTEP/) for fun...:smile:
