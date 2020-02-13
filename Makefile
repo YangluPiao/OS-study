@@ -23,7 +23,7 @@ ${ID}.o: ${ID}.c
 
 run: ${ID}.o 
 	@echo "running..."
-	@./$^
+	@./$^ ${ARG}
 
 debug: check ${ID}.o
 	@gdb --args ./${ID}.o
