@@ -1,6 +1,6 @@
 SHELL := /bin/bash
 
-override CPP_FLAG := -O0 -g ${CPP_FLAG}
+override C_FLAG := -O0 -g ${C_FLAG}
 
 all: check run
 
@@ -17,9 +17,9 @@ prepare: check
 		echo "include ../Makefile" >> ${ID}/Makefile ;\
 	fi
 
-${ID}.o: ${ID}.cpp
+${ID}.o: ${ID}.c
 	@echo "building..."
-	@g++ $^ -o $@ ${CPP_FLAG}
+	@gcc $^ -o $@ ${C_FLAG}
 
 run: ${ID}.o 
 	@echo "running..."
