@@ -25,6 +25,9 @@ run: ${ID}.o
 	@echo "running..."
 	@./$^ ${ARG}
 
+assem: ${ID}.c
+	@gcc $^ -S -o ${ID}.a
+
 debug: check ${ID}.o
 	@gdb --args ./${ID}.o
 clean:
